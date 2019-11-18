@@ -1,0 +1,474 @@
+/*--------------------------------------------------------------
+CSS reset
+--------------------------------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*--------------------------------------------------------------
+----------------------------------------------------------------
+MAIN STYLES
+----------------------------------------------------------------
+----------------------------------------------------------------
+Principles and structure adopted from Morten Rand-Hendriksen
+LinkedIn Learning course CSS Grid: Advanced layouts with grid
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+Variables (CSS custom properties)
+--------------------------------------------------------------*/
+
+:root {
+  --main-color: hsla(203, 70%, 35%, 1);
+	--second-color: hsla(203, 100%, 65%, 1);
+	--third-color: hsla(35, 92%, 36%, 1);
+	--fourth-color: hsla(27, 100%, 50%, 1);
+	--negative-color: hsla(360, 100%, 100%, 1);
+}
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+	margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	clear: both;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 1.6rem;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+label {
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+b,
+strong {
+	font-weight: 600;
+}
+
+.colophon p {
+	font-size: 85%;
+}
+.colophon .fab {
+	font-size: 2rem;
+	line-height: 3.5rem;
+}
+
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
+h1,
+h2,
+h3 {
+	text-align: center;
+	margin: 0;
+	padding: 2rem 0 0 0;
+}
+
+p {
+	margin: 0;
+	padding: 0 0 1rem 0;
+}
+
+header > img {
+	display: block;
+	border: 0;
+	width: 100%;
+	max-height: 40rem;
+	object-fit: cover;
+}
+li > .fas {
+	margin-right: 0.5rem;
+	color: var(--main-color);
+}
+main a {
+	text-decoration: none;
+	color: var(--main-color);
+	font-weight: 600;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+/* Nav section, mobile first */
+nav > button {
+	display: inline-block;
+	position: absolute;
+	text-align: right;
+	padding: 0 0.8rem;
+	color: var(--negative-color);
+	background-color: var(--main-color);
+	font-size: 2rem;
+	border: 0;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: -12rem;
+	background-color: var(--main-color);
+	width: 12rem;
+	line-height: 3rem;
+	text-align: right;
+	height: 100%;
+}
+
+.reveal .main-nav {
+	left: 0;
+}
+
+nav ul {
+	margin: 0 auto;
+	list-style-type: none;
+	text-align: right;
+}
+
+.topmargin {
+	padding-top: 3rem;
+}
+
+nav ul li {
+	display: inline;
+	font-weight: 500;
+	font-size: 0.95rem;
+}
+
+nav ul li a {
+	display: block;
+	color: var(--negative-color);
+	padding: 0 1rem;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	background-color: var(--second-color);
+	text-decoration: underline;
+	transition: 0.3s;
+}
+
+
+/* Medium screens */
+@media screen and (min-width: 38rem) {
+	nav > button {
+		display: none;
+	}
+	nav {
+		position: fixed;
+		left: 0;
+		background-color: var(--main-color);
+		width: 100%;
+		text-align: center;
+		height: 3rem;
+		text-align: center;
+		line-height: 3rem;
+	}
+
+	nav ul {
+		margin: 0 auto;
+		list-style-type: none;
+		text-align: center;
+	}
+
+	.topmargin {
+		padding-top: 0;
+	}
+
+	nav ul li {
+		display: inline;
+		font-weight: 500;
+		font-size: 0.95rem;
+	}
+
+	nav ul li a {
+		display: inline-block;
+		color: var(--negative-color);
+		padding: 0 1rem;
+		text-decoration: none;
+	}
+	
+	nav ul li a:hover{
+		background-color: var(--second-color);
+		text-decoration: underline;
+	}
+}
+
+/* Promo section */
+
+.logo {
+	max-width: calc(20rem * 0.75);
+	display: block;
+	margin: auto;
+	margin-top: 4.5rem;
+	margin-bottom: 1rem;
+}
+
+.logo-first,
+.logo-second,
+.logo-third {
+	line-height: calc(3rem * 0.75);
+	text-align: center;
+	font-weight: 300;
+	color: var(--main-color);
+}
+
+.logo-first {
+	font-size: calc(3.1rem * 0.75);
+	font-weight: 500;
+	letter-spacing: -0.15rem;
+}
+
+.logo-second {
+	border-bottom: 0.1rem solid var(--main-color);
+	font-size: calc(2.7rem * 0.75);
+	padding-bottom: calc(0.7rem * 0.75);
+	letter-spacing: -0.1rem;
+}
+
+.logo-third {
+	font-size: calc(2.25rem * 0.75);
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-top: calc(0.4rem * 0.75);
+	letter-spacing: 0;
+}
+
+.powered {
+	margin-top: -7rem;
+	text-align: right;
+	margin-right: 1.5rem;
+	padding: 1rem;
+	font-size: 0.8rem;
+	color: var(--negative-color);
+}
+
+.powered p {
+	margin-bottom: 0;
+	line-height: 0.8rem;
+}
+
+.powered span {
+	font-size: 1.5rem;
+	line-height: 0.8rem;
+	text-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.4);
+}
+
+.crop img {
+	width: 8rem; 
+	height: auto;
+}
+
+.crop {
+	width: 8rem;
+	height: 8rem;
+	margin: auto;
+	overflow: hidden;
+	border-radius: 4rem;
+	margin-top: -2.8rem;  
+	margin-bottom: 0;          
+}
+
+/* Splash section */
+
+@media screen and (min-width: 38rem) {
+	.splash-text {
+		columns: 1;
+		column-gap: 0em;
+	}
+}
+
+
+/* Content sections */
+
+.splash-content, .skills-content, .education-content, .work-content, .design-content {
+	padding: 2em;
+}
+
+.skills-content {
+	background-color: var(--main-color);
+	color: var(--negative-color);
+}
+
+.work-content {
+	background-color: var(--third-color);
+	color: var(--negative-color);
+}
+
+/* Colophon section */
+.colophon {
+	padding: 2em;
+	background: hsl(0, 0%, 10%);
+	color: white;
+	text-align: center;
+}
+
+.colophon a {
+	color: white;
+}
+
+.colophon a:hover,
+.colophon a:focus {
+	border-bottom: 1px solid white;
+}
+
+
+
+/*--------------------------------------------------------------
+Larger screens:
+--------------------------------------------------------------*/
+@media screen and (min-width: 38rem) {
+	.main-area {
+		max-width: 50em;
+		margin: 0 auto;
+	}
+
+	/* Two columns */
+	#skills {
+		display: flex;
+		flex-direction: row;
+	}
+	#skills .skills-content, #skills .education-content {
+		flex-basis: 25rem;
+	}
+	#work {
+		display: flex;
+		flex-direction: row;
+	}
+	#work .work-content, #work .design-content {
+		flex-basis: 25rem;
+	}
+	.education-content {
+		background-color: hsla(0, 0%, 92%, 1);
+	}
+	.work-content {
+		background-color: hsla(0, 0%, 92%, 1);
+		color: black;
+	}
+	.design-content {
+		background-color: var(--third-color);
+		color: var(--negative-color);
+	}
+}
+
+/*--------------------------------------------------------------
+Skill bars:
+--------------------------------------------------------------*/
+
+/* Container for skill bars */
+.skillscontainer {
+	box-sizing: border-box
+}
+
+.container {
+	width: 100%;
+	background-color: rgba(76, 186, 254, 0.3);
+	margin-bottom: 0.2rem;
+}
+
+.skills {
+	text-align: left;
+	min-height: 0.5rem;
+	font-size: 1rem;
+  padding-top: 3px;
+	padding-bottom: 3px;
+  color: white;
+}
+
+.html {width: 95%; background-color: var(--second-color);}
+.css {width: 90%; background-color: var(--second-color);}
+.js {width: 75%; background-color: var(--second-color);}
+.react {width: 75%; background-color: var(--second-color);}
+.sass {width: 70%; background-color: var(--second-color);}
+.redux {width: 70%; background-color: var(--second-color);}
+.csharp {width: 70%; background-color: var(--second-color);}
+.java {width: 70%; background-color: var(--second-color);}
+.mysql {width: 70%; background-color: var(--second-color);}
+.jquery {width: 65%; background-color: var(--second-color);}
+.node {width: 65%; background-color: var(--second-color);}
+.php {width: 50%; background-color: var(--second-color);}
