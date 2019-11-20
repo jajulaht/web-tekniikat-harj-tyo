@@ -112,6 +112,7 @@ h2 {
 p {
 	margin-bottom: 1.5em;
 }
+
 label {
 	font-size: 0.85rem;
 	font-weight: 600;
@@ -125,6 +126,7 @@ strong {
 .colophon p {
 	font-size: 85%;
 }
+
 .colophon .fab {
 	font-size: 2rem;
 	line-height: 3.5rem;
@@ -143,6 +145,11 @@ h3 {
 	padding: 2rem 0 0 0;
 }
 
+.content-title-design {
+	margin-top: 3rem;
+	margin-bottom: 0.5rem;
+}
+
 p {
 	margin: 0;
 	padding: 0 0 1rem 0;
@@ -155,15 +162,23 @@ header > img {
 	max-height: 40rem;
 	object-fit: cover;
 }
+
 li > .fas {
 	margin-right: 0.5rem;
 	color: var(--main-color);
 }
+
+.work-content li > .fas {
+	margin-right: 0.5rem;
+	color: var(--negative-color);
+}
+
 main a {
 	text-decoration: none;
 	color: var(--main-color);
 	font-weight: 600;
 }
+
 a:hover {
 	text-decoration: underline;
 }
@@ -227,56 +242,23 @@ nav ul li a {
 	text-decoration: none;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
 	background-color: var(--second-color);
 	text-decoration: underline;
 	transition: 0.3s;
 }
 
+.splash-content img {
+	display: block;
+	border: 0;
+	width: 100%;
+	object-fit: cover;
+}
+
 
 /* Medium screens */
 @media screen and (min-width: 38rem) {
-	nav > button {
-		display: none;
-	}
-	nav {
-		position: fixed;
-		left: 0;
-		background-color: var(--main-color);
-		width: 100%;
-		text-align: center;
-		height: 3rem;
-		text-align: center;
-		line-height: 3rem;
-	}
-
-	nav ul {
-		margin: 0 auto;
-		list-style-type: none;
-		text-align: center;
-	}
-
-	.topmargin {
-		padding-top: 0;
-	}
-
-	nav ul li {
-		display: inline;
-		font-weight: 500;
-		font-size: 0.95rem;
-	}
-
-	nav ul li a {
-		display: inline-block;
-		color: var(--negative-color);
-		padding: 0 1rem;
-		text-decoration: none;
-	}
 	
-	nav ul li a:hover{
-		background-color: var(--second-color);
-		text-decoration: underline;
-	}
 }
 
 /* Promo section */
@@ -408,6 +390,49 @@ Larger screens:
 		margin: 0 auto;
 	}
 
+	nav > button {
+		display: none;
+	}
+
+	nav {
+		position: fixed;
+		left: 0;
+		background-color: var(--main-color);
+		width: 100%;
+		text-align: center;
+		height: 3rem;
+		text-align: center;
+		line-height: 3rem;
+	}
+
+	nav ul {
+		margin: 0 auto;
+		list-style-type: none;
+		text-align: center;
+	}
+
+	.topmargin {
+		padding-top: 0;
+	}
+
+	nav ul li {
+		display: inline;
+		font-weight: 500;
+		font-size: 0.95rem;
+	}
+
+	nav ul li a {
+		display: inline-block;
+		color: var(--negative-color);
+		padding: 0 1rem;
+		text-decoration: none;
+	}
+	
+	nav ul li a:hover{
+		background-color: var(--second-color);
+		text-decoration: underline;
+	}
+
 	/* Two columns */
 	#skills {
 		display: flex;
@@ -433,6 +458,18 @@ Larger screens:
 	.design-content {
 		background-color: var(--third-color);
 		color: var(--negative-color);
+	}
+	main .design-content a {
+		text-decoration: none;
+		color: hsla(203, 100%, 80%, 1);
+		font-weight: 600;
+	}
+	main .design-content a:hover {
+		text-decoration: underline;
+	}
+	.work-content li > .fas {
+		margin-right: 0.5rem;
+		color: var(--main-color);
 	}
 }
 
