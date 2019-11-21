@@ -14,18 +14,18 @@ function revealMenu() {
 
 // Hide nav area when focus shifts away:
 function catchFocus() {
-if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !( MENUARRAY.includes(document.activeElement) || document.activeElement === TRIGGER ) ) {
-  revealMenu();
-} else {
-  return;
-}
+  if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !( MENUARRAY.includes(document.activeElement) || document.activeElement === TRIGGER ) ) {
+    revealMenu();
+  } else {
+    return;
+  }
 }
 
 // Hide nav area when touch or click happens elsewhere:
 function clickTarget(e) {
-if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !REVEAL.contains(e.target) ) {
-  revealMenu();
-}
+  if ( TRIGGER.getAttribute('aria-expanded') == 'true' && !REVEAL.contains(e.target) ) {
+    revealMenu();
+  }
 }
 
 
